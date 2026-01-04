@@ -12,7 +12,7 @@ Flexcube Copilot is an AI-powered assistant designed to automate and streamline 
 ## 🛠️ Tech Stack
 
 - **Backend**: Python 3.12+ / Flask
-- **AI Core**: Google Generative AI (Gemini 2.0 Flash)
+- **AI Core**: Mistral Medium
 - **Frontend**: Vanilla HTML5, CSS3, JavaScript
 - **Version Control**: Git / GitHub
 
