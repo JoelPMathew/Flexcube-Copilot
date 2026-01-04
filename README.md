@@ -66,4 +66,4 @@ Open your browser and navigate to `http://127.0.0.1:5000`.
 The project is currently in active development. Core agents for requirement analysis, impact assessment, and code generation are functional and integrated with a preliminary web interface.
 
 ---
-Developed with ❤️ by [JoelPMathew](https://github.com/JoelPMathew)
+
