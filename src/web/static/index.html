@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexcube Copilot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Flexcube Copilot <span class="badge">AI AGENT</span></h1>
+            <p>Orchestrate your banking customization workflow.</p>
+        </header>
+
+        <main class="grid">
+            <!-- Left Pane: Input -->
+            <section class="card input-pane">
+                <h2>1. Input</h2>
+                <textarea id="inputText"
+                    placeholder="Paste your BRD, Change Request, or ask a question here..."></textarea>
+                <button id="analyzeBtn" class="btn primary">Analyze Requirements &rarr;</button>
+            </section>
+
+            <!-- Middle Pane: Requirements -->
+            <section class="card req-pane">
+                <h2>2. Requirements <span id="reqStatus" class="status"></span></h2>
+                <div class="output-container">
+                    <pre id="reqOutput"><code class="language-json">Waiting for input...</code></pre>
+                </div>
+                <button id="impactBtn" class="btn secondary" disabled>Assess Technical Impact &rarr;</button>
+            </section>
+
+            <!-- Right Pane: Impact -->
+            <section class="card impact-pane">
+                <h2>3. Impact Analysis <span id="impactStatus" class="status"></span></h2>
+                <div class="output-container">
+                    <pre id="impactOutput"><code class="language-json">Waiting for requirements...</code></pre>
+                </div>
+                <button id="codeBtn" class="btn primary" disabled>Generate Code &rarr;</button>
+            </section>
+        </main>
+
+        <!-- Code Gen Pane (Full Width) -->
+        <section class="card code-pane" style="margin-top: 1.5rem;">
+            <h2>4. Generated Code <span id="codeStatus" class="status"></span></h2>
+            <div id="codeOutput" class="code-container">
+                <div class="code-placeholder">Code will appear here...</div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

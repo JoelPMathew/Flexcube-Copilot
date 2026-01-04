@@ -1,0 +1,107 @@
+﻿{
+  "business_objective": "Support a new 'Private Equity' fund structure within Oracle Flexcube Investor Services (FCIS) to accommodate private equity fund operations, including vintage year tracking, capital calls, distributions, and management fee calculations based on committed capital.",
+  "client_type": "Private Equity Fund Managers and Investors",
+  "regulatory_constraints": [],
+  "in_scope": [
+    "Creation of Private Equity (PE) funds with vintage year tracking",
+    "Capital Calls processing for PE funds",
+    "Distributions processing for PE funds",
+    "Management fee calculation based on Committed Capital",
+    "Generation of investor statements specific to PE activity"
+  ],
+  "out_of_scope": [
+    "Non-PE fund structures (e.g., mutual funds, hedge funds)",
+    "Tax calculation or reporting for PE funds",
+    "Integration with external PE-specific third-party systems",
+    "Performance fee calculations for PE funds",
+    "Automated investor onboarding for PE funds"
+  ],
+  "functional_rules": [
+    {
+      "id": "FR-001",
+      "description": "Allow creation of Private Equity funds with a vintage year field.",
+      "acceptance_criteria": [
+        "System must provide a field to input and store the vintage year during PE fund creation.",
+        "Vintage year must be displayed in fund details and reports.",
+        "Vintage year must be editable post-creation with audit logging."
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "FR-002",
+      "description": "Support Capital Calls processing for Private Equity funds.",
+      "acceptance_criteria": [
+        "System must allow initiation of capital calls for PE funds.",
+        "Capital calls must be linked to committed capital amounts.",
+        "System must generate notifications for investors regarding capital calls.",
+        "System must track capital call status (e.g., pending, fulfilled, overdue)."
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "FR-003",
+      "description": "Support Distributions processing for Private Equity funds.",
+      "acceptance_criteria": [
+        "System must allow initiation of distributions for PE funds.",
+        "Distributions must be linked to fund performance or specific events (e.g., exits).",
+        "System must generate notifications for investors regarding distributions.",
+        "System must track distribution status (e.g., pending, completed)."
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "FR-004",
+      "description": "Calculate management fees based on Committed Capital for Private Equity funds.",
+      "acceptance_criteria": [
+        "System must calculate management fees using committed capital as the base, not AUM.",
+        "System must allow configuration of fee percentages or fixed amounts.",
+        "Management fees must be prorated based on the fund's vintage year or other relevant periods.",
+        "System must generate fee statements for fund managers and investors."
+      ],
+      "priority": "High"
+    },
+    {
+      "id": "FR-005",
+      "description": "Generate investor statements specifically for Private Equity activity.",
+      "acceptance_criteria": [
+        "System must generate PE-specific investor statements, including capital calls, distributions, and fee details.",
+        "Statements must include vintage year and committed capital information.",
+        "System must allow customization of statement templates for PE funds.",
+        "Statements must be available in PDF and other configurable formats."
+      ],
+      "priority": "Medium"
+    }
+  ],
+  "data_entities": [
+    "Private Equity Fund",
+    "Vintage Year",
+    "Committed Capital",
+    "Capital Call",
+    "Distribution",
+    "Management Fee",
+    "Investor Statement (PE-specific)",
+    "Investor",
+    "Fund Manager"
+  ],
+  "known_fcis_touchpoints": [
+    "Fund Master Module (for PE fund creation and vintage year tracking)",
+    "Capital Call Module (for processing capital calls)",
+    "Distribution Module (for processing distributions)",
+    "Fee Calculation Engine (for management fee calculations based on committed capital)",
+    "Investor Statement Generation Module (for PE-specific statements)"
+  ],
+  "customization_constraints": [
+    "Customization must not alter core FCIS modules unrelated to PE fund operations.",
+    "Any new fields or tables must be added without disrupting existing fund structures.",
+    "PE-specific logic must be configurable to accommodate varying fund terms."
+  ],
+  "performance_sla": "System must process capital calls, distributions, and fee calculations within 5 seconds per transaction during peak loads of up to 1000 concurrent users.",
+  "audit_and_logging": [
+    "All changes to PE fund details (e.g., vintage year, committed capital) must be logged.",
+    "All capital call and distribution transactions must be audited.",
+    "Management fee calculations must be logged with details of the calculation method and inputs.",
+    "Investor statement generation events must be logged."
+  ],
+  "historical_issues": [],
+  "risk_tolerance": "Low: The system must ensure data integrity and accuracy for all PE fund operations, with no tolerance for errors in capital calls, distributions, or fee calculations."
+}
